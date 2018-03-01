@@ -46,7 +46,7 @@ app.on('ready', () => {
     });
   });
 
-  window.webContents.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36'); 
+  window.webContents.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299'); 
   window.loadURL('https://teams.microsoft.com/');
 
   if (process.env.WEB_DEBUG) {
