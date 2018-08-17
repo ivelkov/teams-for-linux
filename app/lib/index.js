@@ -32,7 +32,7 @@ function createWindow(iconPath) {
     width: windowState.width,
     height: windowState.height,
 
-    iconPath,
+    icon: iconPath,
     autoHideMenuBar: true,
 
     webPreferences: {
