@@ -20,8 +20,8 @@
     "dist": "build"
   },
   "devDependencies": {
-    "electron": "^1.8.4",
-    "electron-builder": "^20.8.2"
+    "electron": "^2.0.7",
+    "electron-builder": "^20.28.2"
   },
   "build": {
     "appId": "teams-for-linux",
@@ -45,5 +45,8 @@
       ]
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "ajv": "^6.5.3",
+    "eslint": "^5.4.0"
+  }
 }
