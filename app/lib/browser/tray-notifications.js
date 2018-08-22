@@ -38,25 +38,31 @@ function buildIcon({ count, icon }) {
 }
 
 exports = module.exports = ({ ipc, iconPath }) => {
-  let lastCount = 0;
+    var lastCount = 0;
 
-  ipc.on('page-title', () => {
-    if (typeof angular === 'undefined') {
-      return;
-    }
+    ipc.on('page-title', () => {
+        if (typeof angular === 'undefined') {
+            return;
+        }
+        var element = angular.element(document.documentElement)
+            .controller();
 
-    const count = angular.element(document.documentElement)
-      .controller()
-      .pageTitleNotificationCount;
-    if (lastCount !== count) {
-      buildIcon({ count, icon: nativeImage.createFromPath(iconPath) })
-        .then((icon) => {
-          ipc.send('notifications', {
-            count,
-            icon
-          });
-        });
-      lastCount = count;
-    }
-  });
+        if(!element) {
+            return;
+        }
+        const count = angular.element(document.documentElement)
+            .controller()
+            .pageTitleNotificationCount;
+
+        if (lastCount !== count) {
+            lastCount = count;
+            buildIcon({ count, icon: nativeImage.createFromPath(iconPath) })
+                .then((icon) => {
+                    ipc.send('notifications', {
+                        count,
+                        icon
+                    });
+                });
+        }
+    });
 };
