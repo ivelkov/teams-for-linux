@@ -2,7 +2,7 @@
 
 const windowStateKeeper = require('electron-window-state');
 const path = require('path');
-const open = require('open');
+const open = require('opn');
 const {
   app,
   ipcMain,
