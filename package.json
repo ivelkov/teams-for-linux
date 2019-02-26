@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "electron": "^1.8.4",
-    "electron-builder": "^20.8.2"
+    "electron-builder": "^20.39.0"
   },
   "build": {
     "appId": "teams-for-linux",

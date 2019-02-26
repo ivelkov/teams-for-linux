@@ -47,9 +47,23 @@ function createWindow(iconPath) {
   return window;
 }
 
+var window = null;
+
+var shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
+  if (window) {
+    window.show();
+    window.focus();
+  }
+});
+
+if (shouldQuit) {
+  app.quit();
+  return;
+}
+
 app.on('ready', () => {
   const iconPath = path.join(app.getAppPath(), 'lib/assets/icons/icon-96x96.png');
-  const window = createWindow(iconPath);
+  window = createWindow(iconPath);
   const config = configBuilder(app.getPath('userData'));
 
   menus = new Menus(config, iconPath);
@@ -76,7 +90,7 @@ app.on('ready', () => {
   } else {
     window.webContents.setUserAgent(config.chromeUserAgent);
   }
-  
+
   window.loadURL(config.url);
 
   if (config.webDebug) {
