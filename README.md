@@ -3,7 +3,7 @@
 [![pipeline status](https://gitlab.com/ivelkov/teams-for-linux/badges/master/pipeline.svg)](https://gitlab.com/ivelkov/teams-for-linux/pipelines)
 
 Unofficial Microsoft Teams client for Linux using [Electron](http://electron.atom.io/).
-It uses the Web App and wrapps it as a standalone application using Electron.
+It uses the Web App and wraps it as a standalone application using Electron.
 
 ## Install
 
